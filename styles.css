@@ -304,6 +304,11 @@ button {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -311,6 +316,12 @@ button {
 
 .logo-gold {
   color: var(--gold);
+  flex-shrink: 0;
+}
+
+.logo-sub {
+  font-size: 0.62em;
+  letter-spacing: 0.12em;
 }
 
 .nav-links {
@@ -1864,6 +1875,22 @@ button {
     display: flex;
   }
 
+  .header-inner {
+    gap: 10px;
+  }
+
+  .logo {
+    max-width: calc(100% - 44px);
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    gap: 6px;
+  }
+
+  .logo-sub {
+    font-size: 0.52em;
+    letter-spacing: 0.08em;
+  }
+
   .hero-section {
     padding-top: 78px;
   }
@@ -2014,6 +2041,16 @@ button {
   .quiz-popup-box {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .logo {
+    font-size: 16px;
+    gap: 5px;
+  }
+
+  .logo-sub {
+    font-size: 0.5em;
+    letter-spacing: 0.06em;
   }
 
   .hero-badges {
