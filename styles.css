@@ -33,12 +33,15 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  overflow-x: clip;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: var(--fw-body);
   color: var(--text);
   background:
@@ -1892,23 +1895,49 @@ button {
     display: flex;
   }
 
+  .header {
+    inset: 0 auto auto 0;
+    width: 100dvw;
+    max-width: 100dvw;
+    overflow: hidden;
+  }
+
+  .header > .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    overflow: hidden;
+  }
+
   .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36px;
     gap: 8px;
+    width: 100%;
+    max-width: 100%;
     padding-right: 0;
+    overflow: hidden;
   }
 
   .logo {
-    flex: 1;
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
     overflow: hidden;
     gap: 4px;
-    font-size: 17px;
-    letter-spacing: 0.015em;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.01em;
   }
 
   .logo-sub {
-    font-size: 0.66em;
-    letter-spacing: 0.02em;
+    min-width: 0;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.01em;
   }
 
   .hero-section {
@@ -2065,13 +2094,13 @@ button {
 
   .logo {
     max-width: 100%;
-    font-size: 16px;
+    font-size: 17px;
     gap: 3px;
   }
 
   .logo-sub {
-    font-size: 0.65em;
-    letter-spacing: 0.01em;
+    font-size: 10.5px;
+    letter-spacing: 0;
   }
 
   .hero-badges {
