@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>София | Гадание на Таро, любовная магия, возврат любимого</title>
+  <meta
+    name="description"
+    content="София — гадание на Таро, любовная магия, возврат любимого, снятие негатива, работа по фото. Онлайн, конфиденциально, с личным разбором ситуации.">
+  <link rel="canonical" href="https://privorot-gadanie-taro.site/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="София">
+  <meta property="og:url" content="https://privorot-gadanie-taro.site/">
+  <meta property="og:title" content="София | Гадание на Таро, любовная магия, возврат любимого">
+  <meta
+    property="og:description"
+    content="Вижу то, что скрыто. Читаю чувства, разбираю отношения, возврат, соперницу, негатив и ситуацию по фото.">
+  <meta property="og:image" content="https://privorot-gadanie-taro.site/media/hero-consultation.jpeg">
+  <meta property="og:image:width" content="704">
+  <meta property="og:image:height" content="1437">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="София | Гадание на Таро, любовная магия, возврат любимого">
+  <meta
+    name="twitter:description"
+    content="Вижу то, что скрыто. Читаю чувства, разбираю отношения, возврат, соперницу, негатив и ситуацию по фото.">
+  <meta name="twitter:image" content="https://privorot-gadanie-taro.site/media/hero-consultation.jpeg">
+  <meta name="theme-color" content="#090505">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="stars-field" aria-hidden="true"></div>
+
+  <div class="floating-widget" id="floatingWidget">
+    <button type="button" class="floating-launcher" id="popupLauncher" aria-haspopup="dialog" aria-expanded="false">
+      <span class="floating-ball">
+        <img src="./media/portraits/red-room.jpeg" alt="Связаться с Софией">
+      </span>
+      <span class="floating-panel">
+        <span class="floating-title">Свяжитесь со мной</span>
+        <span class="floating-subtitle" id="popupTyping">любовная магия...</span>
+      </span>
+    </button>
+  </div>
+
+  <div class="popup-overlay" id="popupOverlay" hidden>
+    <div class="popup-modal" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+      <button class="popup-close" id="popupClose" aria-label="Закрыть">✕</button>
+      <p class="popup-eyebrow">Быстрая связь</p>
+      <h2 id="popupTitle">У вас есть вопрос?</h2>
+      <p class="popup-text">Опишите ситуацию в двух словах. Я подскажу, с чего лучше начать.</p>
+      <form class="popup-form" id="popupForm">
+        <textarea id="popupMessage" class="field field-area" placeholder="Напишите ваш вопрос..."></textarea>
+        <input id="popupPhone" class="field" type="tel" placeholder="Ваш номер телефона">
+        <button class="btn btn-primary full-width" type="submit">Отправить в WhatsApp</button>
+      </form>
+      <div class="popup-actions">
+        <a href="https://wa.me/77017542775" target="_blank" rel="noopener">
+          <img src="./assets/wa-logo.png" alt="WhatsApp">
+        </a>
+        <a href="tel:+77017542775">
+          <img src="./assets/telephon.svg" alt="Позвонить">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-popup-overlay" id="quizPopup" hidden>
+    <div class="quiz-popup-box" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+      <button class="quiz-popup-close" id="quizClose" aria-label="Закрыть">✕</button>
+      <div class="quiz-badge">Онлайн тест</div>
+      <div class="sec-head sec-head-left quiz-head">
+        <h2 id="quizTitle" class="h2">Есть ли на вас негатив?</h2>
+        <p class="lead">Короткая диагностика по ощущениям и повторяющимся событиям.</p>
+      </div>
+      <div class="quiz-inner">
+        <div class="quiz-prog">
+          <div class="quiz-bar" id="quizBar" style="width:16.66%"></div>
+        </div>
+        <div class="quiz-step" id="quizStep">Вопрос 1 из 6</div>
+        <div class="quiz-q" id="quizQuestion">Чувствуете ли вы постоянную усталость, даже после отдыха?</div>
+        <div class="quiz-opts" id="quizOptions">
+          <button class="quiz-opt" type="button" data-answer="yes">Да, это похоже на меня</button>
+          <button class="quiz-opt" type="button" data-answer="no">Нет, такого нет</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-mobile" id="navMobile" aria-label="Мобильная навигация">
+    <button class="nav-mobile-close" id="navClose" aria-label="Закрыть">✕</button>
+    <a href="#services">Услуги</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#about">Обо мне</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contact">Связаться</a>
+  </nav>
+
+  <header class="header" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#top" class="logo"><span class="logo-gold">СОФИЯ</span> — ГАДАНИЕ И МАГИЯ</a>
+        <nav class="nav-links" aria-label="Основная навигация">
+          <a href="#situations">Ситуации</a>
+          <a href="#services">Услуги</a>
+          <a href="#about">Обо мне</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+        <div class="nav-cta">
+          <a href="https://wa.me/77017542775" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        </div>
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section hero-section">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-left">
+            <div class="hero-head" data-anim="up">
+              <div class="hero-tag">✦ Таролог · Маг · Работа по фото ✦</div>
+              <div class="hero-title-wrap">
+                <span class="corner corner-1"></span>
+                <span class="corner corner-2"></span>
+                <span class="corner corner-3"></span>
+                <span class="corner corner-4"></span>
+                <p class="hero-label">Гадание на Таро · Любовная Магия</p>
+                <h1 class="hero-name">СОФИЯ</h1>
+                <p class="hero-subline">Возврат любимого · Снятие негатива · Конфиденциально</p>
+              </div>
+            </div>
+
+            <div class="hero-body" data-anim="up">
+              <div class="hero-photo-kicker">Фотографии</div>
+              <div class="hero-visual" data-anim="up">
+                <div class="hero-glow"></div>
+                <img src="./media/hero-consultation.jpeg" alt="София за консультацией" class="hero-img">
+                <div class="hero-fc hero-fc-1">
+                  <div class="fc-label">Формат работы</div>
+                  <div class="fc-value text-gold">Онлайн</div>
+                  <div class="fc-sub">по фото и голосу</div>
+                </div>
+                <div class="hero-fc hero-fc-2">
+                  <div class="fc-label">Запись</div>
+                  <div class="fc-value text-cyan">WhatsApp</div>
+                  <div class="fc-sub">без лишней формальности</div>
+                </div>
+              </div>
+              <p class="lead hero-sub">
+                Вижу то, что скрыто. Читаю чувства, разгадываю тишину, нахожу причины там, где другие видят только следствие.
+                Работаю онлайн, по фото и по голосу. Если ситуация не даёт покоя — напишите мне.
+              </p>
+
+              <div class="hero-badges">
+                <div class="hbadge">
+                  <span class="hbadge-icon">🔮</span>
+                  <div>
+                    <div class="hbadge-t">Гадание и Таро</div>
+                    <div class="hbadge-d">Чувства, отношения, будущее</div>
+                  </div>
+                </div>
+                <div class="hbadge">
+                  <span class="hbadge-icon">💕</span>
+                  <div>
+                    <div class="hbadge-t">Любовная магия</div>
+                    <div class="hbadge-d">Возврат, примирение, притяжение</div>
+                  </div>
+                </div>
+                <div class="hbadge">
+                  <span class="hbadge-icon">🕯</span>
+                  <div>
+                    <div class="hbadge-t">Снятие негатива</div>
+                    <div class="hbadge-d">Сглаз, зависть, тяжёлый фон</div>
+                  </div>
+                </div>
+                <div class="hbadge">
+                  <span class="hbadge-icon">📷</span>
+                  <div>
+                    <div class="hbadge-t">Работа по фото</div>
+                    <div class="hbadge-d">Дистанционно и лично по вашей истории</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-actions">
+                <a href="https://wa.me/77017542775" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Получить консультацию</a>
+              </div>
+
+              <div class="hero-contacts">
+                <a class="hero-phone" href="tel:+77017542775">+7 701 754 27 75</a>
+                <div class="hero-msgs">
+                  <a class="hmsg" href="https://wa.me/77017542775" target="_blank" rel="noopener"><img src="./assets/wa-logo.png" alt="WhatsApp"></a>
+                  <a class="hmsg" href="tel:+77017542775"><img src="./assets/telephon.svg" alt="Позвонить"></a>
+                  <a class="hmsg" href="https://t.me/+77017542775" target="_blank" rel="noopener"><img src="./assets/tg-logo.png" alt="Telegram"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-sec">
+      <div class="marquee-inner">
+        <span>ГАДАНИЕ НА ТАРО</span>
+        <span>ЛЮБОВНАЯ МАГИЯ</span>
+        <span>ВОЗВРАТ ЛЮБИМОГО</span>
+        <span>СНЯТИЕ НЕГАТИВА</span>
+        <span>РАБОТА ПО ФОТО</span>
+        <span>ЗАЩИТА</span>
+        <span>ГАДАНИЕ НА ТАРО</span>
+        <span>ЛЮБОВНАЯ МАГИЯ</span>
+      </div>
+    </div>
+
+    <section class="section" id="situations">
+      <div class="container">
+        <div class="sec-head" data-anim="up">
+          <div class="sec-label">С чем ко мне обращаются</div>
+          <h2 class="h2">Когда внутри уже нет спокойствия, сначала нужно увидеть, что происходит на самом деле.</h2>
+          <p class="lead">Разбираю ситуацию глубоко: чувства, охлаждение, соперницу, семейный разлад, тяжёлый фон и следующий шаг.</p>
+        </div>
+        <div class="grid-3 situations-grid">
+          <article class="card" data-anim="left" data-delay="1">
+            <span class="num">I</span>
+            <h3>Любимый отдалился</h3>
+            <p>Он стал холоднее, реже пишет, уходит от разговора, и вы не понимаете, что произошло.</p>
+          </article>
+          <article class="card" data-anim="up" data-delay="2">
+            <span class="num">II</span>
+            <h3>Нужно вернуть человека</h3>
+            <p>Связь прервана, но чувства не отпускают. Важно понять, есть ли путь назад и что мешает сейчас.</p>
+          </article>
+          <article class="card" data-anim="right" data-delay="3">
+            <span class="num">III</span>
+            <h3>Появилась соперница</h3>
+            <p>Есть ощущение чужого вмешательства, третьего лица или влияния на ваши отношения.</p>
+          </article>
+          <article class="card" data-anim="left" data-delay="2">
+            <span class="num">IV</span>
+            <h3>Постоянные ссоры дома</h3>
+            <p>Разговоры заканчиваются конфликтом, доверие ушло, а напряжение только растёт.</p>
+          </article>
+          <article class="card" data-anim="up" data-delay="3">
+            <span class="num">V</span>
+            <h3>Подозрение на негатив</h3>
+            <p>Полоса неудач, тяжесть, тревога, упадок сил, повторяющиеся срывы и неприятные события.</p>
+          </article>
+          <article class="card" data-anim="right" data-delay="4">
+            <span class="num">VI</span>
+            <h3>Нужен ответ о будущем</h3>
+            <p>Стоите перед выбором и хотите понять, куда ведёт ситуация и где правда.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="sec-head" data-anim="up">
+          <div class="sec-label">Фотогалерея</div>
+          <h2 class="h2">Атмосфера работы и личных приёмов</h2>
+          <p class="lead">Живые кадры без шаблонной постановки — та самая подача, с которой ко мне приходят за личным разбором.</p>
+        </div>
+        <div class="orbit-gallery" id="orbitGallery">
+          <div class="orbit-shell">
+            <div class="orbit-ring" id="orbitRing">
+              <article class="orbit-card"><img src="./media/portraits/tarot-table.jpeg" alt="София за столом с картами" loading="lazy"></article>
+              <article class="orbit-card"><img src="./media/portraits/book-wall.jpeg" alt="София с чёрной свечой" loading="lazy"></article>
+              <article class="orbit-card"><img src="./media/portraits/flame-ritual.jpeg" alt="София проводит ритуал с огнём" loading="lazy"></article>
+              <article class="orbit-card"><img src="./media/portraits/red-room.jpeg" alt="София в красной ритуальной атмосфере" loading="lazy"></article>
+              <article class="orbit-card"><img src="./media/portraits/outdoor-candles.jpeg" alt="София со свечами" loading="lazy"></article>
+              <article class="orbit-card"><img src="./media/hero-consultation.jpeg" alt="София во время консультации" loading="lazy"></article>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-cta" data-anim="up">
+          <a href="https://wa.me/77017542775" class="btn btn-primary" target="_blank" rel="noopener">Записаться на консультацию</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-sec">
+      <div class="marquee-inner">
+        <span>УСЛУГИ</span>
+        <span>УСЛУГИ</span>
+        <span>УСЛУГИ</span>
+        <span>УСЛУГИ</span>
+        <span>УСЛУГИ</span>
+        <span>УСЛУГИ</span>
+      </div>
+    </div>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="sec-head" data-anim="up">
+          <div class="sec-label">Чем я могу помочь</div>
+          <h2 class="h2">Основные направления работы</h2>
+          <p class="lead">Если вы не знаете, какой формат нужен, просто опишите ситуацию. Я подскажу, с чего лучше начать.</p>
+        </div>
+        <div class="services-grid">
+          <article class="srv-card" data-anim="left" data-delay="1">
+            <img src="./assets/icons/s1.png" class="srv-img" alt="">
+            <div class="srv-title">Гадание на Таро</div>
+            <div class="srv-text">Глубокий расклад на чувства, отношения, скрытые мотивы, настоящее и возможное развитие ситуации.</div>
+            <div class="srv-tags"><span class="srv-tag">Таро</span><span class="srv-tag">Чувства</span><span class="srv-tag">Будущее</span></div>
+          </article>
+          <article class="srv-card" data-anim="right" data-delay="2">
+            <img src="./assets/icons/s5.png" class="srv-img" alt="">
+            <div class="srv-title">Любовная магия</div>
+            <div class="srv-text">Работа с охлаждением, притяжением, примирением, восстановлением связи и любовной темой.</div>
+            <div class="srv-tags"><span class="srv-tag">Любовь</span><span class="srv-tag">Примирение</span><span class="srv-tag">Привязка</span></div>
+          </article>
+          <article class="srv-card" data-anim="left" data-delay="3">
+            <img src="./assets/icons/s3.png" class="srv-img" alt="">
+            <div class="srv-title">Возврат любимого</div>
+            <div class="srv-text">Если человек ушёл, замкнулся или исчез из вашей жизни, смотрю, что происходит и можно ли вернуть связь.</div>
+            <div class="srv-tags"><span class="srv-tag">Возврат</span><span class="srv-tag">Разрыв</span><span class="srv-tag">Отношения</span></div>
+          </article>
+          <article class="srv-card" data-anim="right" data-delay="4">
+            <img src="./assets/icons/s6.png" class="srv-img" alt="">
+            <div class="srv-title">Снятие негатива</div>
+            <div class="srv-text">Диагностика сглаза, тяжёлого фона, зависти, разрушительных повторов и чужого воздействия.</div>
+            <div class="srv-tags"><span class="srv-tag">Сглаз</span><span class="srv-tag">Порча</span><span class="srv-tag">Чистка</span></div>
+          </article>
+          <article class="srv-card" data-anim="left" data-delay="5">
+            <img src="./assets/icons/s2.png" class="srv-img" alt="">
+            <div class="srv-title">Семья и примирение</div>
+            <div class="srv-text">Когда дома ссоры, недоверие, ревность или накопленный холод, смотрю, где начался разлом и как его остановить.</div>
+            <div class="srv-tags"><span class="srv-tag">Семья</span><span class="srv-tag">Мир</span><span class="srv-tag">Воссоединение</span></div>
+          </article>
+          <article class="srv-card" data-anim="right" data-delay="6">
+            <img src="./assets/icons/s4.png" class="srv-img" alt="">
+            <div class="srv-title">Защита и личный путь</div>
+            <div class="srv-text">Личный разбор, защита, важные решения, ощущение тупика, дороги, будущие повороты и удача.</div>
+            <div class="srv-tags"><span class="srv-tag">Защита</span><span class="srv-tag">Путь</span><span class="srv-tag">Удача</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm card-day-section" id="card-day">
+      <div class="container card-day-wrap">
+        <div data-anim="up" class="card-day-head">
+          <div class="sec-label">Карта дня</div>
+          <h2 class="h2">Задайте вопрос мысленно и вытяните карту</h2>
+          <p class="lead">Карта даст короткую подсказку, а если захотите — разберём её уже применительно к вашей ситуации.</p>
+        </div>
+        <div class="signals-grid" data-anim="up">
+          <div class="signal-card"><div class="signal-icon">💘</div><div class="signal-lbl">хочет ли вернуться</div></div>
+          <div class="signal-card"><div class="signal-icon">🕯</div><div class="signal-lbl">есть ли на вас негатив</div></div>
+          <div class="signal-card"><div class="signal-icon">🔓</div><div class="signal-lbl">что откроется дальше</div></div>
+        </div>
+        <div class="fortune-widget" data-anim="scale">
+          <div class="quiz-badge gold-badge">Карта дня</div>
+          <h3 class="h3">Получите знак на сегодня</h3>
+          <p class="lead small-lead">Сосредоточьтесь на своём вопросе и вытяните карту.</p>
+          <div class="taro-stage" id="taroStage">
+            <div class="taro-inner" id="taroInner">
+              <div class="taro-back">
+                <img src="./assets/taro/back.png" alt="">
+                <div class="taro-shimmer"></div>
+              </div>
+              <div class="taro-front">
+                <img src="" id="taroFrontImg" alt="Карта Таро">
+                <div class="taro-shimmer"></div>
+              </div>
+            </div>
+          </div>
+          <div class="taro-name" id="taroCardName"></div>
+          <button class="btn btn-gold" type="button" id="taroCta">Вытянуть карту</button>
+          <a id="taroWaBtn" href="https://wa.me/77017542775" class="btn btn-primary" target="_blank" rel="noopener" hidden>Разобрать карту в WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="split" data-anim="fade">
+          <div class="split-img-outer">
+            <div class="split-img-wrap">
+              <img src="./media/portraits/book-wall.jpeg" alt="София во время работы с чёрной свечой" class="split-img">
+            </div>
+          </div>
+          <div class="split-content">
+            <div class="split-head">
+              <div class="sec-label">Обо мне</div>
+              <h2 class="h2">Я не даю пустых обещаний. Сначала смотрю, потом говорю прямо.</h2>
+              <p class="lead">Если ситуация запутана, не нужно разбираться в названиях обрядов и форматов. Это моя задача.</p>
+            </div>
+            <div class="split-body">
+              <div class="split-list" id="aboutList">
+                <div class="sli">
+                  <div class="sli-icon">✦</div>
+                  <div><div class="sli-t">Работаю лично с историей человека</div><div class="sli-d">Не по шаблону и не поверхностно, а через саму суть вашей ситуации.</div></div>
+                </div>
+                <div class="sli">
+                  <div class="sli-icon">✦</div>
+                  <div><div class="sli-t">Смотрю любовь, разрыв, соперницу, холод</div><div class="sli-d">Чувства, связь, скрытые причины дистанции и дальнейшее развитие.</div></div>
+                </div>
+                <div class="sli">
+                  <div class="sli-icon">✦</div>
+                  <div><div class="sli-t">Разбираю негатив и тяжёлый фон</div><div class="sli-d">Если полоса неудач не заканчивается, это тоже нужно смотреть отдельно.</div></div>
+                </div>
+                <div class="sli">
+                  <div class="sli-icon">✦</div>
+                  <div><div class="sli-t">Работаю дистанционно</div><div class="sli-d">Для начала достаточно написать в WhatsApp и кратко описать, что происходит.</div></div>
+                </div>
+              </div>
+              <div class="split-actions">
+                <a href="https://wa.me/77017542775" class="btn btn-primary" target="_blank" rel="noopener">Написать Софии</a>
+                <button class="btn btn-outline" type="button" id="openQuiz">Пройти диагностику</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-sec">
+      <div class="marquee-inner">
+        <span>ОТЗЫВЫ</span>
+        <span>ОТЗЫВЫ</span>
+        <span>ОТЗЫВЫ</span>
+        <span>ОТЗЫВЫ</span>
+        <span>ОТЗЫВЫ</span>
+      </div>
+    </div>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="sec-head" data-anim="up">
+          <div class="sec-label">Отзывы</div>
+          <h2 class="h2">Что пишут после работы</h2>
+          <p class="lead">* Результаты индивидуальны и в каждом конкретном случае могут отличаться.</p>
+        </div>
+        <div class="reviews-desktop">
+          <div class="rv-card" data-anim="left" data-delay="1">
+            <div class="rv-head"><div class="rv-name">Марина</div><div class="rv-stars">★★★★★</div></div>
+            <div class="rv-text">Пришла из-за отношений, когда уже совсем запуталась. После разбора он сам вышел на разговор, и мы наконец обсудили то, что давно висело между нами.</div>
+          </div>
+          <div class="rv-card" data-anim="up" data-delay="2">
+            <div class="rv-head"><div class="rv-name">Алина</div><div class="rv-stars">★★★★★</div></div>
+            <div class="rv-text">После работы он стал мягче отвечать, потом сам предложил встретиться. Между нами снова появилось тепло, которого давно не было.</div>
+          </div>
+          <div class="rv-card" data-anim="right" data-delay="3">
+            <div class="rv-head"><div class="rv-name">Игорь</div><div class="rv-stars">★★★★★</div></div>
+            <div class="rv-text">Жена согласилась встретиться, мы заново учимся слышать друг друга. Самое главное — дверь не закрылась окончательно.</div>
+          </div>
+          <div class="rv-card" data-anim="left" data-delay="2">
+            <div class="rv-head"><div class="rv-name">Наталья</div><div class="rv-stars">★★★★★</div></div>
+            <div class="rv-text">После просмотра я хотя бы поняла, что именно происходит и где правда. Появилась ясность, которой мне не хватало больше всего.</div>
+          </div>
+          <div class="rv-card" data-anim="up" data-delay="3">
+            <div class="rv-head"><div class="rv-name">Оксана</div><div class="rv-stars">★★★★★</div></div>
+            <div class="rv-text">Дома была тяжесть, постоянные ссоры и тревога. После чистки состояние стало легче, а напряжение постепенно ушло.</div>
+          </div>
+          <div class="rv-card" data-anim="right" data-delay="4">
+            <div class="rv-head"><div class="rv-name">Лилия</div><div class="rv-stars">★★★★★</div></div>
+            <div class="rv-text">Мне понравилось, что со мной говорили прямо, без тумана и без лишних обещаний. Это редкость.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm faq-section">
+      <div class="container">
+        <div class="sec-head" data-anim="up">
+          <div class="sec-label">Вопросы и ответы</div>
+          <h2 class="h2">Часто спрашивают</h2>
+        </div>
+        <div class="faq-grid" id="faqGrid">
+          <div class="faq-item" data-anim="left" data-delay="1">
+            <button class="faq-q" type="button">
+              Как проходит консультация дистанционно?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-a">Вы отправляете фото и кратко описываете ситуацию через WhatsApp. Я смотрю её и даю ответ с пояснением и рекомендацией, с чего лучше начать.</div>
+          </div>
+          <div class="faq-item" data-anim="right" data-delay="1">
+            <button class="faq-q" type="button">
+              Что нужно для начала?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-a">Напишите мне в WhatsApp. Если не знаете, как сформулировать вопрос, просто расскажите, что происходит. Этого уже достаточно.</div>
+          </div>
+          <div class="faq-item" data-anim="left" data-delay="2">
+            <button class="faq-q" type="button">
+              Нужна ли личная встреча?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-a">Нет, всё можно сделать дистанционно. Работаю онлайн, по фото и по голосу, без обязательной очной встречи.</div>
+          </div>
+          <div class="faq-item" data-anim="right" data-delay="2">
+            <button class="faq-q" type="button">
+              Как понять, есть ли на мне негатив?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-a">Если тянется полоса неудач, усталость, конфликтность, тревога или разрушение планов, это уже повод посмотреть глубже. <a href="#" id="faqQuizLink">Пройдите короткую диагностику →</a></div>
+          </div>
+          <div class="faq-item" data-anim="left" data-delay="3">
+            <button class="faq-q" type="button">
+              Не знаю, какой формат работы мне нужен
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-a">Это моя задача. Вы просто пишете свою историю, а я уже говорю, что лучше подойдёт именно вам.</div>
+          </div>
+          <div class="faq-item" data-anim="right" data-delay="3">
+            <button class="faq-q" type="button">
+              Есть ли гарантия результата?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-a">Я не обещаю того, чего не вижу по ситуации. Сначала делаю просмотр, потом говорю прямо, что реально, а что нет.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="form-section-grid">
+          <div class="form-info" data-anim="left">
+            <div class="sec-label">Связаться</div>
+            <h2 class="h2">Напишите или позвоните</h2>
+            <p class="lead">Если ситуация уже давит, лучше не тянуть. Опишите вопрос — и я подскажу, какой шаг сейчас будет правильным.</p>
+            <div class="contact-options-new">
+              <a class="co-call" href="tel:+77017542775">
+                <img src="./assets/telephon.svg" alt="Позвонить">
+                <div>
+                  <div class="co-call-label">Позвонить</div>
+                  <div class="co-call-num">+7 701 754 27 75</div>
+                </div>
+              </a>
+              <div class="co-messengers">
+                <a class="co-msg" href="https://wa.me/77017542775" target="_blank" rel="noopener">
+                  <img src="./assets/wa-logo.png" alt="WhatsApp">
+                  <span>WhatsApp</span>
+                </a>
+                <a class="co-msg" href="https://t.me/+77017542775" target="_blank" rel="noopener">
+                  <img src="./assets/tg-logo.png" alt="Telegram">
+                  <span>Telegram</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="form-box" data-anim="right">
+            <h3>Оставить заявку</h3>
+            <p class="lead">Напишите своё имя и вопрос. Кнопка откроет готовое сообщение в WhatsApp.</p>
+            <form id="contactForm">
+              <div class="form-g"><textarea class="field field-area" id="cfMsg" placeholder="Опишите вашу ситуацию..."></textarea></div>
+              <div class="form-g"><input type="tel" class="field" id="cfTel" placeholder="Ваш номер телефона"></div>
+              <button class="btn btn-primary full-width" type="submit">Отправить в WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><span class="logo-gold">СОФИЯ</span> — ГАДАНИЕ И МАГИЯ</div>
+          <p>Онлайн, по фото, конфиденциально. Личный разбор любви, возврата, негатива и сложных жизненных ситуаций.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Разделы</h4>
+            <ul>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#gallery">Галерея</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="tel:+77017542775">+7 701 754 27 75</a></li>
+              <li><a href="https://wa.me/77017542775" target="_blank" rel="noopener">WhatsApp</a></li>
+              <li><a href="https://t.me/+77017542775" target="_blank" rel="noopener">Telegram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© София</span>
+        <span>Конфиденциально · Онлайн · По фото</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="dock">
+    <div class="dock-cta">
+      <span class="dock-cta-title">Свяжитесь со мной</span>
+      <span class="dock-cta-sep">•</span>
+      <span class="dock-cta-sub" id="dockTyping">возврат любимого...</span>
+    </div>
+    <div class="dock-inner">
+      <a class="dock-btn" href="https://wa.me/77017542775" target="_blank" rel="noopener">
+        <img src="./assets/wa-logo.png" alt="WhatsApp">
+        <span>WhatsApp</span>
+      </a>
+      <a class="dock-btn" href="tel:+77017542775">
+        <img src="./assets/telephon.svg" alt="Позвонить">
+        <span>Звонок</span>
+      </a>
+      <a class="dock-btn" href="https://t.me/+77017542775" target="_blank" rel="noopener">
+        <img src="./assets/tg-logo.png" alt="Telegram">
+        <span>Telegram</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
