@@ -284,12 +284,18 @@ button {
   position: fixed;
   inset: 0 0 auto;
   z-index: 1000;
+  width: 100%;
+  max-width: 100%;
   overflow-x: clip;
   padding: 16px 0;
   background: rgba(7, 4, 4, 0.74);
   border-bottom: 1px solid rgba(232, 201, 106, 0.08);
   backdrop-filter: blur(16px);
   transition: padding 0.25s ease, background 0.25s ease;
+}
+
+.header > .container {
+  overflow: hidden;
 }
 
 .header.scrolled {
@@ -1889,6 +1895,7 @@ button {
 
   .header-inner {
     gap: 8px;
+    padding-right: 0;
   }
 
   .logo {
@@ -1901,8 +1908,8 @@ button {
   }
 
   .logo-sub {
-    font-size: 0.64em;
-    letter-spacing: 0.03em;
+    font-size: 0.66em;
+    letter-spacing: 0.02em;
   }
 
   .hero-section {
@@ -2064,8 +2071,8 @@ button {
   }
 
   .logo-sub {
-    font-size: 0.63em;
-    letter-spacing: 0.02em;
+    font-size: 0.65em;
+    letter-spacing: 0.01em;
   }
 
   .hero-badges {
