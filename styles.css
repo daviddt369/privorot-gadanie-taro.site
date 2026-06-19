@@ -302,7 +302,9 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+  width: 100%;
   min-width: 0;
+  overflow: hidden;
 }
 
 .logo {
@@ -349,7 +351,10 @@ button {
 .burger {
   display: none;
   flex-direction: column;
+  flex: 0 0 36px;
   gap: 5px;
+  width: 36px;
+  min-width: 36px;
   padding: 6px;
   border: 0;
   background: none;
@@ -1888,7 +1893,8 @@ button {
 
   .logo {
     flex: 1;
-    max-width: calc(100vw - 76px);
+    max-width: 100%;
+    overflow: hidden;
     gap: 4px;
     font-size: 17px;
     letter-spacing: 0.015em;
@@ -2052,7 +2058,7 @@ button {
   }
 
   .logo {
-    max-width: calc(100vw - 68px);
+    max-width: 100%;
     font-size: 16px;
     gap: 3px;
   }
