@@ -621,6 +621,71 @@ function setupSplitListReveal() {
   observer.observe(list);
 }
 
+function setupReviewWidgets() {
+  const ratingStars = [...document.querySelectorAll("#ratingStars .mstar")];
+  const ratingCount = document.getElementById("ratingCount");
+  const likeButtons = [...document.querySelectorAll(".rv-like .like-btn")];
+
+  if (ratingStars.length) {
+    const resetStars = () => {
+      ratingStars.forEach((star) => {
+        if (!star.classList.contains("lit")) {
+          star.textContent = "☆";
+          star.style.color = "#c9a84c";
+        }
+      });
+    };
+
+    ratingStars.forEach((star, index) => {
+      star.addEventListener("mouseenter", () => {
+        ratingStars.forEach((item, itemIndex) => {
+          item.style.color = itemIndex <= index ? "#f4d979" : "#c9a84c";
+        });
+      });
+
+      star.addEventListener("mouseleave", resetStars);
+
+      star.addEventListener("click", () => {
+        ratingStars.forEach((item, itemIndex) => {
+          const isLit = itemIndex <= index;
+          item.textContent = isLit ? "★" : "☆";
+          item.classList.toggle("lit", isLit);
+          item.style.color = isLit ? "#f4d979" : "#c9a84c";
+        });
+
+        if (ratingCount && !ratingStars.some((item) => item.dataset.voted === "1")) {
+          const match = ratingCount.textContent.match(/[\d\s]+/);
+          if (match) {
+            const nextValue = parseInt(match[0].replace(/\s/g, ""), 10) + 1;
+            ratingCount.textContent = `Рейтинг: ${nextValue.toLocaleString("ru-RU")} оценок`;
+          }
+          ratingStars.forEach((item) => {
+            item.dataset.voted = "1";
+          });
+        }
+      });
+    });
+  }
+
+  likeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.liked === "1") return;
+
+      const counter = button.nextElementSibling;
+      if (counter) {
+        counter.textContent = `${parseInt(counter.textContent, 10) + 1}`;
+      }
+
+      button.dataset.liked = "1";
+      button.classList.add("is-liked");
+      button.style.transform = "scale(1.18)";
+      window.setTimeout(() => {
+        button.style.transform = "";
+      }, 220);
+    });
+  });
+}
+
 setupStars();
 setupEnergyField();
 setupHeader();
@@ -633,3 +698,4 @@ setupPopupForms();
 setupQuizPopup();
 setupTarotCard();
 setupSplitListReveal();
+setupReviewWidgets();
